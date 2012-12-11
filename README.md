@@ -6,14 +6,15 @@ Rails 3.1 uses sprockets for its asset pipeline. Rails 3.1 has shown considerabl
 
 ## How to use it?
 
-The gem includes [haml-js]. You would not have to download it separately. To use this gem, you need to do the following. 
+The gem includes [haml-js]. You would not have to download it separately. To use this gem, you need to do the following.
 
 In the `Gemfile`, add the following line.
 
     gem "haml-sprockets"
 
-In `app/assets/javascripts/application.js` add the following line before `//= require_tree .`
+In `app/assets/javascripts/application.js` add the following lines before `//= require_tree .`. The first line is optional and provides MSIE8 compatibility.
 
+    //=require haml_msie8
     //=require haml
 
 Now, you can create hamljs files under `app/assets/javascripts/templates` folder. You can create the templates folder, if it does not already exist.
